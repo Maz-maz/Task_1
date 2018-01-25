@@ -1,3 +1,5 @@
 angular.module("adminApp",[
-  "adminNav"
+  "adminNav",
+  "ngRoute",
+  "adminPages"
 ]);

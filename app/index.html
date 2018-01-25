@@ -10,11 +10,20 @@
 <title>Admin app</title>
 
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="app.module.js"></script>
+<script src="app.config.js"></script>
 
 <!--Menu component-->
 <script src="admin-nav/admin-nav.module.js"></script>
 <script src="admin-nav/admin-nav.component.js"></script>
+
+<!--Pages component-->
+<script src="admin-pages/admin-pages.module.js"></script>
+<script src="admin-pages/admin-pages.component.js"></script>
+<!--
+<script src="admin-pages/admin-pages.controller.js"></script>
+-->
 
 <!--1. All css needed for components.
     1.0 General - yes.
@@ -27,8 +36,14 @@
 <!-- MetisMenu CSS -->
 <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
+<!-- Timeline CSS -->
+<link href="css/timeline.css" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<link href="bower_components/morrisjs/morris.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +66,10 @@
     <!--Nav menu-->
     <admin-nav></admin-nav>
 
-
+    <!--Wrapper for pages-->
+    <div id="page-wrapper">
+      <ng-view></ng-view>
+    </div>
 
   </div>
 
@@ -67,6 +85,12 @@
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="bower_components/raphael/raphael.min.js"></script>
+<script src="bower_components/morrisjs/morris.min.js"></script>
+<script src="js/morris-data.js"></script>
+
 
 <!-- Custom Theme JavaScript -->
 <script src="js/sb-admin-2.js"></script>
