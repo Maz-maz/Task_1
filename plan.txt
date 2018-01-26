@@ -1,4 +1,16 @@
 Новий коміт:
+- ДОбавив можливітсь перезагрузки скріптів. Вона покищо на стадії розробки. Це для динамічного перегруження скріптів для сторінок які загружаються.
+- ДОбавив папку з скріптом для перегрузки скріптів.
+- Настроїв контроллер AdminPagesController добиртаись до аштеемельки яка буде вставлятись в сторінку. І також добиратись до файлу де описано пергрузку чого зробити. І також там же викон. така перегрузка. Покищо лише для яваскріпта.
+- ДОбавлено сторінки: дашбоард, !флот, грід.
+
+1. Beginning of adding dynamic reload of some scripts, that needed on some pages.
+2. Added folder with script where present functional for such reloading.
+3. Now are present in "AdminPagesController" next things: -1- Getting from server HTML that will be inserted to the page. -2- After that, getting of JSON file where described what files to reload. -3- Also present that reloading. -4- This all right now only for JS. But later ca be done for CSS also.
+4. Now is present next pages in routing: dashboard, flot and grid.
+
+
+
     - Добавив енге-роуте модуль.
     - ДОбавив адмін паджес компоненту.
     - Настроїв роутінг.
@@ -23,9 +35,16 @@
     + ВИправити те що клацаня на довільну ссилку кидає на гріт.
     3. !!! Якось більш обдуманіше впровадити добирання до аштеемельок для сторінок.
     4. !!! Привнести кращу організацію. Зокрема позбутися "магічних констант".
+!    5. !!! Зробити загруження того що потрібно перезагрузити  - динамічно - з якихось файлів на сервері.
+!    !!! ДОбавити можливість перегруження стилів.
+!    !!! Реалізувати інші сторінки з відповідним переруженням.
+    5. Покраще зробити діставання потрібних аштеемельок. Справитись з асинхронністю. - потрібно бути обережним з змінними і посиланнями на змінні які сидять в скоупі компоненнти.
+    6. Виправити всі посилання на сторінках.
+    7. !!! Флот - проблеми при переході від дашбоард до флот і зміні розміру вікна знизу панелею розробника.
 
 
 Список залежностей бовера:
+    База:
     1. Ангулар:
     "angular": "1.5.x"
     "angular-route": "1.5.x"
@@ -34,5 +53,16 @@
     "font-awesome": "~4.2.0"
     3. Метіс меню:
     "metisMenu": "~1.1.3"
-    4. Grids page - додатково до того що вище:
+
+    Те що буде обновлятись
+    4. Dashboard page - додатково до того що вище:
     "morrisjs": "~0.5.1",
+    5. flot:
+    <!-- Flot Charts JavaScript -->
+    <script src="../bower_components/flot/excanvas.min.js"></script>
+    <script src="../bower_components/flot/jquery.flot.js"></script>
+    <script src="../bower_components/flot/jquery.flot.pie.js"></script>
+    <script src="../bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="../bower_components/flot/jquery.flot.time.js"></script>
+    <script src="../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../js/flot-data.js"></script>
