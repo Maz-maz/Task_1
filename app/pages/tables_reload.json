@@ -1,0 +1,8 @@
+{
+  "js": [
+    "bower_components/datatables/media/js/jquery.dataTables.min.js",
+    "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js",
+    "js/tables.page_level.js"
+  ],
+  "page_level": "$(document).ready(function() { $('#dataTables-example').DataTable({ responsive: true });});"
+}

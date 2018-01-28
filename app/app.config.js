@@ -8,6 +8,6 @@ angular.module("adminApp").
         template: '<admin-pages></admin-pages>'
         //template: "<div ng-controller='AdminPagesController'><div my-customer type='{{pageName}}'></div></div>"
       }).
-      otherwise('/grid');
+      otherwise('/dashboard');
     }
   ]);

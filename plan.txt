@@ -1,29 +1,27 @@
 Новий коміт:
+- Позначив які ассети не перегружати.
+- Позначив які ассети потрібні яким стрінкам.
+- ПРисутні сторінки: дашбоард, !флот, morris, грід, tables, forms
+- Помістив падже левел скріпт таблеса покищо в окремий файл. А так то він мав би загружатись на сторінку.
+- Зробив дашбоард сторінкою за замовчуванням.
+
+1. Marked what assets do not reloading.
+2. Marked what assets is needed to reload for what pages.
+3. Now are present next pages: dashboard, flot, morris, grid, tables, forms.
+4. In the tables page some script must go on the page. For now i put it in the separate js file. And for now i load it like that file. Later must be done better.
+5. Now dashboard page is a default page in routing.
+
+
+
 - ДОбавив можливітсь перезагрузки скріптів. Вона покищо на стадії розробки. Це для динамічного перегруження скріптів для сторінок які загружаються.
 - ДОбавив папку з скріптом для перегрузки скріптів.
 - Настроїв контроллер AdminPagesController добиртаись до аштеемельки яка буде вставлятись в сторінку. І також добиратись до файлу де описано пергрузку чого зробити. І також там же викон. така перегрузка. Покищо лише для яваскріпта.
-- ДОбавлено сторінки: дашбоард, !флот, грід.
+- Добавлено сторінки: дашбоард, !флот, грід.
 
 1. Beginning of adding dynamic reload of some scripts, that needed on some pages.
 2. Added folder with script where present functional for such reloading.
 3. Now are present in "AdminPagesController" next things: -1- Getting from server HTML that will be inserted to the page. -2- After that, getting of JSON file where described what files to reload. -3- Also present that reloading. -4- This all right now only for JS. But later ca be done for CSS also.
 4. Now is present next pages in routing: dashboard, flot and grid.
-
-
-
-    - Добавив енге-роуте модуль.
-    - ДОбавив адмін паджес компоненту.
-    - Настроїв роутінг.
-    - Отримую потрібні аштеемельки через іксашер запроси і викор. іннер аштеемель.
-    - Скопіював всі залежності для бовера - всі за раз.
-    - ДОбавив новий шлях - дашбоард і для нього темплейт відповідно.
-
-1. Plugged in ngRoute module.
-2. Added adminPages component.
-3. Tuned routing.
-4. Made putting of needed HTML files thru $http service and innerHTML.
-5. Added all needed Bower dependencies for pages.
-6. Added possibility to get to Dashboard page.
 
 
 
@@ -41,6 +39,8 @@
     5. Покраще зробити діставання потрібних аштеемельок. Справитись з асинхронністю. - потрібно бути обережним з змінними і посиланнями на змінні які сидять в скоупі компоненнти.
     6. Виправити всі посилання на сторінках.
     7. !!! Флот - проблеми при переході від дашбоард до флот і зміні розміру вікна знизу панелею розробника.
+    8. !!! tables - page level demo - зробити.
+    9. !!! Якщо ввести формс_фштеемель то не буде перекидуватись на початкову сторінку. - виправити.
 
 
 Список залежностей бовера:
@@ -66,3 +66,10 @@
     <script src="../bower_components/flot/jquery.flot.time.js"></script>
     <script src="../bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../js/flot-data.js"></script>
+    6. morris:
+    <!-- Morris Charts JavaScript -->
+    <script src="../bower_components/raphael/raphael-min.js"></script>
+    <script src="../bower_components/morrisjs/morris.min.js"></script>
+    <script src="../js/morris-data.js"></script>
+    7. 
+
