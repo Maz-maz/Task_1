@@ -46,10 +46,10 @@
 <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
 <!--tables: DataTables CSS -->
-<link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+<link href="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
 <!--tables: DataTables Responsive CSS -->
-<link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+<link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
 <!--dashboard, flot: Timeline CSS -->
 <link href="css/timeline.css" rel="stylesheet">
@@ -80,13 +80,20 @@
 
   <div id="wrapper">
 
+    <!--!!! Below, in comment, first variant with some bug-->
     <!--Nav menu-->
+    <!--
     <admin-nav></admin-nav>
+    -->
 
     <!--Wrapper for pages-->
+    <!--
     <div id="page-wrapper">
       <ng-view></ng-view>
     </div>
+    -->
+    
+    <ng-view></ng-view>
 
   </div>
 
@@ -101,7 +108,10 @@
 
 <!--menu: Metis Menu Plugin JavaScript -->
 <!--Dont reload-->
+<!--
 <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+-->
+<div class="bower_components/metisMenu/dist/metisMenu.min.js"></div>
 
 <!--tables: DataTables JavaScript -->
 <div class="bower_components/datatables/media/js/jquery.dataTables.min.js"></div>
@@ -122,9 +132,8 @@
 <div class="js/flot-data.js"></div>
 
 
-<!--general: Custom Theme JavaScript -->
-<!--Dont reload-->
-<script src="js/sb-admin-2.js"></script>
+<!--general, menu: Custom Theme JavaScript -->
+<div class="js/sb-admin-2.js"></div>
 
 <!--tables: Page-Level Demo Scripts - Tables - Use for reference 
     !!! Made later. For now is placed in js/tables.page_level.js-->

@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
 
-gulp.task("start", function() {
+gulp.task("default", function() {
   browserSync.init({
     server: {
       baseDir: "app"

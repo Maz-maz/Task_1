@@ -20,11 +20,11 @@ angular.module("adminPages").
           self.pages_place.innerHTML = response.data;
 
           /*Reload assets*/
-          self.reloadAssets();
+          self.AdminPageReloadAssets();
         });
 
         /*Get file names to reload and make reload*/
-        self.reloadAssets = function() {
+        self.AdminPageReloadAssets = function() {
 
           $http.get('pages/' + self.pageName + '_reload.json').then(function(response) {
             /*Reload js files*/

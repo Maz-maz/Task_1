@@ -1,3 +1,4 @@
+
 angular.module("adminApp").
   config(["$locationProvider", "$routeProvider",
     function config($locationProvider, $routeProvider) {
@@ -5,8 +6,9 @@ angular.module("adminApp").
 
       $routeProvider.
       when('/:pageName', {
-        template: '<admin-pages></admin-pages>'
-        //template: "<div ng-controller='AdminPagesController'><div my-customer type='{{pageName}}'></div></div>"
+        /*!!! Below, in comment, first variant with some bug*/
+        //template: '<admin-pages></admin-pages>'
+        template: '<admin-nav></admin-nav> <div id="page-wrapper"><admin-pages></admin-pages></div>'
       }).
       otherwise('/dashboard');
     }

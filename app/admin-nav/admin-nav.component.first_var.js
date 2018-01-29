@@ -15,9 +15,6 @@ angular.module("adminNav").
         /*Array of names of js assets to reload*/
         self.js_assets = [];
 
-        /*Set collapse class on sidebar-nav*/
-        $(".sidebar-nav").addClass("collapse");
-
         /*Get file names to reload and make reload*/
         self.AdminNavReloadAssets = function() {
 
@@ -41,6 +38,24 @@ angular.module("adminNav").
 
         /*When will be created this controller make reload assets*/
         self.AdminNavReloadAssets();
+
+
+        /*Get links that change route*/
+        //console.log($("a[href^='#!/'"));
+        self.links = $("a[href^='#!/'");
+
+        /*When they clicked remove active from nav and reload js assets:*/
+        self.links.on("click", function() {
+
+          /*Remove "active" classes*/
+          $.each(self.links, function(index, elm) {
+            if($(elm).hasClass("active")) {
+              $(elm).removeClass("active");
+            }
+          });
+          /*Reload js assets*/
+          self.AdminNavReloadAssets();
+        })
 
       }
     ]

@@ -1,4 +1,34 @@
 Новий коміт:
+*- помніяв self.reloadAssets на self.AdminNavReloadAssets бо в нас вже є reloadAssets.reloadAssets - для того щоб не була плутанина.
+*- видалив файли які не викор..
+*- Виправив не вірне посилання на сіесес файли для таблиць.
+*! поправити меню:
+*- немає колапсу меню.
+*    це через те що були виділені не потрібні. Це забираєтсья тим що всюди де "#" кладеться "javascript:;"
+*- немає що коли вибраний певний роутер, то вибрано певне поле меню як активне.
+*    це добре працювало протсо потрібно забрати зробленя непотрібного активним.
+*- немає розгортання частин меню які б мали розгортатись.
+*    виправлено через забирання "#" де кладеться "javascript:;"
+*- ТАкож потрібно було обновляти два файли, зокрема "js/sb-admin-2.js".
+*- Зробив так що коли клацається лінк з бокового меню тоді по преше забираєтсья класс активно з всіх лінків, а по друге обновляється ассет.
+*- проблеми. всетаик не закриваютсья автоматично якщо переходити на інші.
+*    ВИрішив це тим що при загрузці новго роута, а в даному разі рпи загрузці меню компоненти на сторінку я добавляю до елемента з класом ".sidebar-nav" класс "collapse". ЩО при широкому екрані нічого не робить а при малому ховає дане меню.
+*- І якщо клацнути на такий який розкриється епрейти по ссилці звідти а потім закрии його і перейти по якісь іншій ссилці тоді баг.
+*    це вирішено через повторну загрузку меню компоненти кожного разу коли міняєтсья роутер.
+
+1. In the "admin-nav.component" changed "self.reloadAssets" to "self.AdminNavReloadAssets" avoid confusion with "reloadAssets" object.
+2. Deleted unused files.
+3. Made correct link to CSS of the tables pages.
+4. Corrected admin-nav navigation menu( next are present problems "P:" and solutions "S:"):
+4.1 P: Menu doesn't collapse. S: This is because present selected excess tabs. Solved by replacing all "#" href-s to "javascript:;".
+4.2 P: Doesn't present reflecting route path to the nav menu. S: This is working well just need to get rid of selecting excess tabs of menu.
+4.3 P: Doesn't toggle tabs that have second and lower level tabs. S: Again solved by get rid of "#" href-s.
+4.4 Made reloading of two js files for menu. In this way added "js/sb-admin-2.js" to reloading.
+4.5 Made click response of nav tabs like next. We remove all active classes from menu tabs and also reload assets.
+4.6 P: On small screen size, when menu must be collapsed - it doesn't collapse. This is when you run app from this size. S: Solved by placing class "collapse" to div with class ".sidebar-nav". This is doing only in the creating of nav-menu controller instance. At the first run of such menu.
+4.7 P: When you select link from second level menu tabs, than close this set of tabs, and then click on link below this collapsed part of menu - then some bug is arise. S: Solved by loading menu component every time when changing route. This is done by putting nav-menu component to template of routing. Also in such way we dont need that what done in "4.5" step of this commit.
+
+
 - Позначив які ассети не перегружати.
 - Позначив які ассети потрібні яким стрінкам.
 - ПРисутні сторінки: дашбоард, !флот, morris, грід, tables, forms
@@ -13,15 +43,7 @@
 
 
 
-- ДОбавив можливітсь перезагрузки скріптів. Вона покищо на стадії розробки. Це для динамічного перегруження скріптів для сторінок які загружаються.
-- ДОбавив папку з скріптом для перегрузки скріптів.
-- Настроїв контроллер AdminPagesController добиртаись до аштеемельки яка буде вставлятись в сторінку. І також добиратись до файлу де описано пергрузку чого зробити. І також там же викон. така перегрузка. Покищо лише для яваскріпта.
-- Добавлено сторінки: дашбоард, !флот, грід.
 
-1. Beginning of adding dynamic reload of some scripts, that needed on some pages.
-2. Added folder with script where present functional for such reloading.
-3. Now are present in "AdminPagesController" next things: -1- Getting from server HTML that will be inserted to the page. -2- After that, getting of JSON file where described what files to reload. -3- Also present that reloading. -4- This all right now only for JS. But later ca be done for CSS also.
-4. Now is present next pages in routing: dashboard, flot and grid.
 
 
 
@@ -41,6 +63,8 @@
     7. !!! Флот - проблеми при переході від дашбоард до флот і зміні розміру вікна знизу панелею розробника.
     8. !!! tables - page level demo - зробити.
     9. !!! Якщо ввести формс_фштеемель то не буде перекидуватись на початкову сторінку. - виправити.
+    10. !!! ВИправит ите що меню не хочвається коли бути в зменшеному екрані.
+    11. !!! Дивно але чомусь без перезагрузки коре яваскріпта бутстрапу всеодне відносно добре все працювало. Чи робити перезагрузку цього - і якщо робити то коли?
 
 
 Список залежностей бовера:

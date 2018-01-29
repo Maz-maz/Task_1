@@ -2,14 +2,19 @@
 var reloadAssets = {
 };
 
-/* !!! Delete later
+/* !!! Delete later*/
 var toReload = {
   js: [
-    "bower_components/raphael/raphael.min.js", 
-    "bower_components/morrisjs/morris.min.js",
-    "js/morris-data.js"
+    "bower_components/metisMenu/dist/metisMenu.min.js",
+    "js/sb-admin-2.js"
   ]
 };
+/*
+reloadAssets.reloadAssets(toReload.js[0], "js");
+
+for(i = 0; i <= toReload.js.length; i++) {
+                reloadAssets.reloadAssets(toReload.js[i], "js");
+              }
 */
 
 /*Put string to "src='string'" or other*/
