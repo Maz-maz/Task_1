@@ -1,4 +1,8 @@
 Новий коміт:
+- де грід поміняв всі ашрефи з "#" на "javascript:;"
+In the dashboard page changed all href-s with "#" to "javascript:;";
+
+
 *- помніяв self.reloadAssets на self.AdminNavReloadAssets бо в нас вже є reloadAssets.reloadAssets - для того щоб не була плутанина.
 *- видалив файли які не викор..
 *- Виправив не вірне посилання на сіесес файли для таблиць.
@@ -27,23 +31,6 @@
 4.5 Made click response of nav tabs like next. We remove all active classes from menu tabs and also reload assets.
 4.6 P: On small screen size, when menu must be collapsed - it doesn't collapse. This is when you run app from this size. S: Solved by placing class "collapse" to div with class ".sidebar-nav". This is doing only in the creating of nav-menu controller instance. At the first run of such menu.
 4.7 P: When you select link from second level menu tabs, than close this set of tabs, and then click on link below this collapsed part of menu - then some bug is arise. S: Solved by loading menu component every time when changing route. This is done by putting nav-menu component to template of routing. Also in such way we dont need that what done in "4.5" step of this commit.
-
-
-- Позначив які ассети не перегружати.
-- Позначив які ассети потрібні яким стрінкам.
-- ПРисутні сторінки: дашбоард, !флот, morris, грід, tables, forms
-- Помістив падже левел скріпт таблеса покищо в окремий файл. А так то він мав би загружатись на сторінку.
-- Зробив дашбоард сторінкою за замовчуванням.
-
-1. Marked what assets do not reloading.
-2. Marked what assets is needed to reload for what pages.
-3. Now are present next pages: dashboard, flot, morris, grid, tables, forms.
-4. In the tables page some script must go on the page. For now i put it in the separate js file. And for now i load it like that file. Later must be done better.
-5. Now dashboard page is a default page in routing.
-
-
-
-
 
 
 
