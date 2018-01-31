@@ -1,0 +1,5 @@
+-To use you need to have node package manager.<br>
+-Before using run:"npm install" and after "bower install".<br>
+-App present in "app" folder. Only this folder is needed to put on the server. But inside must be present dependencies wich must be installed by bower. In other words inside must be present folder "bower_components". But if you run comands that present above, all must work properly.<br>
+-Only next pages are present here: dashboard, flot, morris, grid, tables, forms.<br>
+-To run app enter command "gulp" and go to that URLs that will be showed.
